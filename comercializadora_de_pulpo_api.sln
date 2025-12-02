@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comercializadora_de_pulpo_api", "comercializadora_de_pulpo_api.csproj", "{A3C323B2-4CFE-45AF-8F5E-35F51A0CE48D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C323B2-4CFE-45AF-8F5E-35F51A0CE48D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C323B2-4CFE-45AF-8F5E-35F51A0CE48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C323B2-4CFE-45AF-8F5E-35F51A0CE48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C323B2-4CFE-45AF-8F5E-35F51A0CE48D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F7DF795-731D-451B-9DA8-93AAFD2F3FD3}
+	EndGlobalSection
+EndGlobal

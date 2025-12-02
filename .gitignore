@@ -1,0 +1,20 @@
+# Build
+bin/
+obj/
+*.Publish/
+
+# User settings / IDE
+.vs/
+*.user
+*.suo
+
+# Configuración sensible
+appsettings.json
+appsettings.*.json
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
