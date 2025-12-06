@@ -29,19 +29,21 @@ namespace comercializadora_de_pulpo_api.Repositories
             if (request.Supplier.HasValue)
                 query = query.Where(p => p.SupplierId == request.Supplier);
 
-            if (request.Search != null)
+            if (!string.IsNullOrWhiteSpace(request.Search))
             {
-                var search = request.Search!.Replace(" ", "").ToLower();
-                query = query.Where(p =>
-                    p.Sku.ToLower().Contains(search)
-                );
+                var search = request.Search.Trim();
+                query = query.Where(p => p.Sku.StartsWith(search));
             }
 
             if (request.RawMaterial.HasValue)
                 query = query.Where(p => p.RawMaterialId == request.RawMaterial);
 
             if (request.Date.HasValue)
-                query = query.Where(p => p.CreatedAt.Date == request.Date.Value.Date);
+            {
+                var start = request.Date.Value.Date;
+                var end = start.AddDays(1);
+                query = query.Where(p => p.CreatedAt >= start && p.CreatedAt < end);
+            }
 
             int total = await query.CountAsync();
 
