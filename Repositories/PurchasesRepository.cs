@@ -34,9 +34,6 @@ namespace comercializadora_de_pulpo_api.Repositories
                 var search = request.Search!.Replace(" ", "").ToLower();
                 query = query.Where(p =>
                     p.Sku.ToLower().Contains(search)
-                    || p.TotalPrice.ToString().Contains(search)
-                    || p.PriceKg.ToString().Contains(search)
-                    || p.TotalKg.ToString().Contains(search)
                 );
             }
 

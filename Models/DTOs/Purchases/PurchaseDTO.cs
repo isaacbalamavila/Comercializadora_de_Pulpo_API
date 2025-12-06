@@ -7,8 +7,8 @@
         public string Supplier { get; set; } = null!;
         public string RawMaterial { get; set; } = null!;
         public decimal TotalKg { get; set; }
-        public decimal TotalPrice { get; set; }
         public decimal PriceKg { get; set; }
+        public decimal TotalPrice { get; set; }
         public DateTime createdAt { get; set; }
     }
 }
