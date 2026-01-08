@@ -11,6 +11,5 @@
         public int Content {  get; set; }
         public string Unit { get; set; } = null!;
         public int Quantity { get; set; }
-        public int Remain { get; set; }
     }
 }

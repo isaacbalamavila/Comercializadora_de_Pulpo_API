@@ -27,6 +27,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                     PaymentMethod = s.PaymentMethodNavigation.Name,
                     Total = s.TotalAmount,
                 })
+                .OrderBy(s=>s.Date)
                 .ToListAsync();
 
             return new SaleReportResponseDTO
@@ -53,6 +54,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                     Phone = c.Phone,
                     Rfc = c.Rfc,
                 })
+                .OrderBy(c=>c.CreatedAt)
                 .ToListAsync();
 
             return new ClientsReportResponseDTO
@@ -85,8 +87,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                     Name = g.Key.Name,
                     Content = g.Key.Content,
                     Unit = g.Key.UnitAbbreviation,
-                    Quantity = g.Sum(pb => pb.Quantity),
-                    Remain = g.Sum(pb => pb.Remain),
+                    Quantity = g.Sum(pb => pb.Remain),
                 })
                 .ToListAsync();
 
@@ -119,6 +120,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                     PurchaseDate = s.PurchaseDate,
                     ExpirationDate = s.ExpirationDate,
                 })
+                .OrderBy(s=>s.PurchaseDate)
                 .ToListAsync();
 
             return new SuppliesReportResponseDTO
@@ -149,6 +151,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                     PriceKG = p.PriceKg,
                     TotalPrice = p.TotalPrice,
                 })
+                .OrderBy(p=>p.Date)
                 .ToListAsync();
 
             return new PurchasesReportResponseDTO
