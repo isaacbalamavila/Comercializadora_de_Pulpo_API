@@ -14,8 +14,6 @@ namespace comercializadora_de_pulpo_api.Repositories
         {
             bool isAdmin = user.RoleId == 1;
             DateTime today = DateTime.Now.Date;
-            DateTime monthStart = new(today.Year, today.Month, 1);
-            DateTime monthEnd = new(today.Year, today.Month + 1, 1);
 
             int daysToSubtract = ( int )today.DayOfWeek - ( int )DayOfWeek.Monday;
             if (daysToSubtract < 0)
@@ -29,11 +27,7 @@ namespace comercializadora_de_pulpo_api.Repositories
 
             if (isAdmin)
             {
-                var monthClients = await _context
-                    .Clients.Where(c =>
-                        c.CreatedAt >= monthStart && c.CreatedAt < monthEnd
-                    )
-                    .CountAsync();
+                var currentProccesses = await _context.ProductionProcesses.Where(p => p.StatusId == 2).CountAsync();
 
                 var purchasesPerDay = await _context
                     .Purchases.Where(p =>
@@ -68,7 +62,7 @@ namespace comercializadora_de_pulpo_api.Repositories
                 return new DashboardDTO
                 {
                     IsAdmin = isAdmin,
-                    MonthClients = monthClients,
+                    currentProcesses = currentProccesses,
                     TodayPurchases = todayPurchases,
                     TodaySales = todaySales,
                     WeekPurchases = weekPurchases,
